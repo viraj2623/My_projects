@@ -1,0 +1,30 @@
+
+package com.example.employee;
+
+public class Employee {
+    private int empId;
+    private String firstName;
+    private String lastName;
+    private double salary;
+    private int deptId;
+    private String hireDate;
+    private String department;
+
+    public Employee(int empId, String firstName, String lastName, double salary, int deptId, String hireDate, String department) {
+        this.empId = empId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.salary = salary;
+        this.deptId = deptId;
+        this.hireDate = hireDate;
+        this.department = department;
+    }
+
+    public int getEmpId() { return empId; }
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public double getSalary() { return salary; }
+    public int getDeptId() { return deptId; }
+    public String getHireDate() { return hireDate; }
+    public String getDepartment() { return department; }
+}

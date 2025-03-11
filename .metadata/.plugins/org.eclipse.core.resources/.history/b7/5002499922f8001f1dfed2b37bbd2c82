@@ -1,0 +1,60 @@
+package loginandregpr;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Regandloginsrv extends HttpServlet {
+	
+	private Loginandregdao loginandregdao;
+	
+	public void init() {
+		loginandregdao= new Loginandregdao();
+		
+	}
+	
+	protected void service(HttpServletRequest req, HttpServletResponse res) {
+		
+		String movement= req.getParameter("movement");
+		
+		if("register".equals(movement)) {
+			userRegister(req,res);
+		}else if("login".equals(movement)) {
+			userValidate(req,res);
+		}
+		else {
+			res.sendRedirect("error.html");
+		}
+	}
+	
+	
+	private void userRegister(HttpServletRequest request, HttpServletResponse response) {
+		
+		int reguid=0;
+		
+		String name = request.getParameter("name");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String email = request.getParameter("email");
+		String role = request.getParameter("role");
+		
+		Adminandstdmodel astm = new Adminandstdmodel();
+		
+		astm.setName(name);
+		astm.setName(username);
+		astm.setName(password);
+		astm.setName(email);
+		astm.setName(role);
+		
+		try {
+			reguid = loginandregdao.userRegister(astm);
+		} catch() {
+			
+		}
+		
+	
+		
+	}
+	
+
+}

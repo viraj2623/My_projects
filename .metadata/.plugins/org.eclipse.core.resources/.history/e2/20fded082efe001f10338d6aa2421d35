@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn-success {
+            background: #28a745;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-success:hover {
+            background: #218838;
+        }
+        .form-control {
+            border-radius: 10px;
+        }
+        .text-center a {
+            color: #6e8efb;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card p-4 bg-white">
+                    <h2 class="text-center text-primary">Login</h2>
+                    <form action="Regandloginsrv" method="post">
+                        <input type="hidden" name="movement" value="login">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Login</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="register.html" class="text-decoration-none">Don't have an account? Register here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

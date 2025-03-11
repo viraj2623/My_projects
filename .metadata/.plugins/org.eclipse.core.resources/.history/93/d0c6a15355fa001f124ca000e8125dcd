@@ -1,0 +1,33 @@
+package com.example.service;
+
+import com.example.db.DB;
+import com.example.model.Employee;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Service {
+    public List<Employee> getAllEmployee() {
+        List<Employee> employees = new ArrayList<>();
+        String query = "SELECT EMP_ID, FNAME, DEPARTMENT FROM employee";
+
+        try (Connection conn = DB.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                employees.add(new Employee(
+                    rs.getInt("EMP_ID"),
+                    rs.getString("FNAME"),
+                    rs.getString("DEPARTMENT")
+                ));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return getAllEmployee();
+    }
+}

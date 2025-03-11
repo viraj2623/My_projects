@@ -1,0 +1,32 @@
+package loginandregpr;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Regandloginsrv extends HttpServlet {
+	
+	private Loginandregdao loginandregdao;
+	
+	public void init() {
+		loginandregdao= new Loginandregdao();
+		
+	}
+	
+	protected void service(HttpServletRequest req, HttpServletResponse res) {
+		
+		String movement= req.getParameter("movement");
+		
+		if("register".equals(movement)) {
+			userRegister(request,response);
+		}else if("login".equals(movement)) {
+			userValidate(req,res);
+		}
+		else {
+			res.sendRedirect("error.html");
+		}
+	}
+	
+	
+
+}

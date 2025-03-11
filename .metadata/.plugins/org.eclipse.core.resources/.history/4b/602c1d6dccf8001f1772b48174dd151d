@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="Regandloginsrv" method="service">
+  <div class="container mt-4">
+  <input type="hidden" name="movement" value="register">
+   <table style="width: 95%" class="table">
+    <tr>
+     <td><legend>Username</legend></td>
+     <td><input type="text" name="username" required/></td>
+    </tr>
+    <tr>
+     <td><legend>Password</legend></td>
+     <td><input type="password" name="password" required/></td>
+    </tr>
+    <tr>
+    <td><legend>Role:</legend></td>
+   <td> <select name="role">
+   <option value="select">select</option>
+        <option value="STUDENT">Student</option>
+        <option value="ADMIN">Admin</option>
+    </select>
+    </td>
+    <br>
+    </tr>
+   </table><br/>
+   <input type="submit" class="btn btn-outline-success" value="Submit" />&nbsp; OR&nbsp;
+   <a type="button" class="btn btn-outline-secondary" href="login.html">Go to login </a>
+   </div>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="col-11 container">
+ <div align="center">
+  <h1>New Registration</h1>
+ 
+  <form action="Regandloginsrv" method="service">
+  <div class="container mt-4">
+  <input type="hidden" name="movement" value="register">
+   <table style="width: 95%" class="table">
+    <tr>
+     <td><legend>Name</legend></td>
+     <td><input type="text" name="name" required/></td>
+    </tr>
+    <tr>
+     <td><legend>Email</legend></td>
+     <td><input type="email" name="email" required/></td>
+    </tr>
+    <tr>
+     <td><legend>set new username</legend></td>
+     <td><input type="text" name="username" required/></td>
+    </tr>
+    <tr>
+     <td><legend>set new password</legend></td>
+     <td><input type="password" name="password" required/></td>
+    </tr>
+    <tr>
+    <td><legend>Role:</legend></td>
+   <td> <select name="role">
+   <option value="select">select</option>
+        <option value="STUDENT">Student</option>
+        <option value="ADMIN">Admin</option>
+    </select>
+    </td>
+    <br>
+    </tr>
+   </table><br/>
+   <input type="submit" class="btn btn-outline-success" value="Submit" />&nbsp; OR&nbsp;
+   
+   </div>
+  </form>
+ </div>
+ </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>

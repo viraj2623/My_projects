@@ -1,0 +1,16 @@
+127.0.0.1 - - [02/Mar/2025:16:16:05 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:16:10 +0530] "GET /newweb/NewFile.jsp HTTP/1.1" 500 2518
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:16:10 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:16:24 +0530] "GET /newweb/NewFile.jsp?age=27 HTTP/1.1" 200 143
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:16:47 +0530] "GET /newweb/redirect.jsp HTTP/1.1" 200 155
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:17:03 +0530] "GET /newweb/NewFile.jsp?age=18 HTTP/1.1" 200 138
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:17:10 +0530] "GET /newweb/NewFile.jsp?age=17 HTTP/1.1" 200 138
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:17:12 +0530] "GET /newweb/NewFile.jsp?age=17 HTTP/1.1" 200 138
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:17:13 +0530] "GET /newweb/NewFile.jsp?age=17 HTTP/1.1" 200 138
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:17:13 +0530] "GET /newweb/NewFile.jsp?age=17 HTTP/1.1" 200 138
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:17:13 +0530] "GET /newweb/NewFile.jsp?age=17 HTTP/1.1" 200 138
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:17:14 +0530] "GET /newweb/NewFile.jsp?age=17 HTTP/1.1" 200 138
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:18:00 +0530] "GET /newweb/NewFile.jsp?age=45 HTTP/1.1" 200 137
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:18:46 +0530] "GET /newweb/NewFile.jsp HTTP/1.1" 500 2512
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:18:59 +0530] "GET /newweb/NewFile.jsp?age=100 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:16:18:59 +0530] "GET /newweb/redirect.jsp HTTP/1.1" 200 155

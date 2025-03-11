@@ -1,0 +1,99 @@
+package loginandregpr;
+
+import java.io.IOException;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class Regandloginsrv extends HttpServlet {
+    
+    private Loginandregdao loginandregdao;
+    
+    public void init() {
+        loginandregdao = new Loginandregdao();
+    }
+    
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        
+        String movement = request.getParameter("movement");
+        
+        if ("register".equals(movement)) {
+            userRegister(request, response);
+        } else if ("login".equals(movement)) {
+            loginUser(request, response);
+        } else {
+            response.sendRedirect("error.html");
+        }
+    }
+    
+    private void userRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+        int reguid = 0;
+        
+        String name = request.getParameter("name");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String email = request.getParameter("email");
+        String role = request.getParameter("role");
+        
+        Adminandstdmodel astm = new Adminandstdmodel();
+        
+        astm.setName(name);
+        astm.setUsername(username);
+        astm.setPassword(password);
+        astm.setEmail(email);
+        astm.setRole(role);
+        
+        try {
+            reguid = loginandregdao.userRegister(astm);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        if (reguid > 0) {
+            request.setAttribute("name", astm.getName());
+            request.setAttribute("username", astm.getUsername());
+            request.setAttribute("password", astm.getPassword());
+            request.setAttribute("email", astm.getEmail());
+            request.setAttribute("role", astm.getRole());
+
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.html");
+            requestDispatcher.forward(request, response);
+        } else {
+            response.sendRedirect("error.html");
+        }
+    }
+    
+    private void loginUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        
+        try {
+            String role = loginandregdao.userValidate(username, password);
+            
+            if (role != null) {
+                HttpSession session = request.getSession();
+                session.setAttribute("username", username);
+                session.setAttribute("password", password);
+                
+                if ("ADMIN".equals(role)) {
+                    List<Adminandstdmodel> students = loginandregdao.getAllStudents();
+                    request.setAttribute("students", students);
+                    request.getRequestDispatcher("main").forward(request, response);
+                } else {
+                    response.sendRedirect("main.html");
+                }
+            } else {
+                response.sendRedirect("error.html");
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("error.html");
+        }
+    }
+}
