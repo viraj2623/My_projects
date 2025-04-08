@@ -1,1 +1,0 @@
-<html><body><h2>User ID: ${id}</h2></body></html>
